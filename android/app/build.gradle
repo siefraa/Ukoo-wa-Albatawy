@@ -6,8 +6,11 @@ if (localPropertiesFile.exists()) {
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) { throw new GradleException("Flutter SDK not found.") }
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' // kama unatumia Kotlin
+    id 'com.google.gms.google-services' // kama unatumia Firebase
+}
 // apply from: "$flutterRoot/packages/flutter_tools/gradle/app_plugin_loader.gradle"
 
 android {
