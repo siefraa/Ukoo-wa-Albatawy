@@ -12,7 +12,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' // optional but compatible
 }
 
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+//apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "com.familia.yangu"
