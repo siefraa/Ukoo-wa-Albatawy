@@ -8,10 +8,11 @@ if (flutterRoot == null) { throw new GradleException("Flutter SDK not found.") }
 
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android' // kama unatumia Kotlin
-    id 'com.google.gms.google-services' // kama unatumia Firebase
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android' // optional but compatible
 }
-// apply from: "$flutterRoot/packages/flutter_tools/gradle/app_plugin_loader.gradle"
+
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "com.familia.yangu"
