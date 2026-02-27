@@ -3,7 +3,7 @@ plugins {
     id "org.jetbrains.kotlin.android"
 }
 
-apply from: "$rootDir/../flutter.gradle" // or use flutterRoot from rootProject.properties
+apply from: "$rootDir/../flutter.gradle"
 
 android {
     namespace "com.familia.yangu"

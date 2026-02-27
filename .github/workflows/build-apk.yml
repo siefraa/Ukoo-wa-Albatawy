@@ -9,30 +9,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout repo
       - uses: actions/checkout@v4
 
+      # Step 2: Setup Java
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
+      # Step 3: Setup Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.13.7
+          flutter-version: 3.41.2
           channel: stable
 
-      - name: Get dependencies
+      # Step 4: Get dependencies
+      - name: Get Flutter dependencies
         run: flutter pub get
 
-      - name: Clean
+      # Step 5: Clean previous build (optional but recommended)
+      - name: Clean build
         run: flutter clean
 
+      # Step 6: Build release APK
       - name: Build APK
         run: flutter build apk --release
 
+      # Step 7: Upload APK artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
